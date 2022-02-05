@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 
 @Log4j2
 public class TextArea {
-    String inputTextArea = "//div[contains(@class, 'modal-body')]//label[text()='Mailing Country']/..";
+    String inputTextArea = "//div[contains(@class, 'modal-body')]//label[text()='%s']/..";
 //            "//div[contains(@class, 'modal-body')]//span[text()='%s']/ancestor::div[contains(@class, 'uiInput')]//textarea";
 //    "//div[contains(@class, 'modal-body')]//label[text()='%s']/ancestor::lightning-textarea//textarea";
 

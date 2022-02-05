@@ -17,7 +17,7 @@ public class AccountFactory {
                 .description(faker.princessBride().character())
                 .billingStreet(faker.address().streetAddress())
                 .shippingStreet(faker.address().streetAddress())
-                .parentAccount("Lou Dan Obseen")
+                .parentAccount("TestParentAccount")
                 .billingCity(faker.address().cityName())
                 .shippingCity(faker.address().cityName())
                 .billingZipCode(faker.address().zipCode())
