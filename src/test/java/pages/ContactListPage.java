@@ -1,9 +1,11 @@
 package pages;
 
+import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class ContactListPage extends BasePage{
+@Log4j2
+public class ContactListPage extends BasePage {
     public static final By CONTACT_LABEL = By.xpath("//nav[@aria-label='Breadcrumbs']//span");
 
     public ContactListPage(WebDriver driver) {
@@ -16,13 +18,15 @@ public class ContactListPage extends BasePage{
     }
 
     public ContactListPage open() {
-        driver.get(BASE_URL + "/lightning/o/Contact/list");
+        driver.get(BASE_URL + "lightning/o/Contact/list");
         return this;
     }
 
-    public AccountModalPage clickNew() {
+    public ContactModalPage clickNew() {
+        log.info("Start of the clickNew method on the ContactModalPage page");
         driver.findElement(NEW_BUTTON).click();
-        return new AccountModalPage(driver);
+        log.info("Completing the clickNew method on the ContactModalPage");
+        return new ContactModalPage(driver);
     }
 
 }

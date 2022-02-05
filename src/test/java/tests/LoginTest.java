@@ -1,4 +1,4 @@
-package test;
+package tests;
 
 import org.testng.annotations.Test;
 
@@ -11,7 +11,7 @@ public class LoginTest extends BaseTest {
     public void login() {
         boolean isHomePageOpened = loginPage
                 .open()
-                .login("pioni.mika-0uab@force.com", "karinazelenkevich12")
+                .login("blablablabla-d5xv@force.com", "karina_zelenkevich12")
                 .open()
                 .isPageOpen();
 

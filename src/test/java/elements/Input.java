@@ -1,29 +1,25 @@
 package elements;
 
+import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+@Log4j2
 public class Input {
-//        + "|//div[contains(@class, 'modal-body')]//*[text()='%s']/ancestor::lightning-input//div";
+    String inputLocator = "//div[contains(@class, 'modal-body')]//span[text()='%s']/ancestor::div[contains(@class, 'uiInput')]//input";
 
     WebDriver driver;
     String label;
-    String inputLocator = "//span[text()='%s']/ancestor::div[contains(@class,'uiInput')]//input";
-    String optionLocator = "//li//a//div[@title='%s']";
 
     public Input(WebDriver driver, String label) {
         this.driver = driver;
         this.label = label;
     }
 
-    public void write(String text) {
-        System.out.printf("Writing text '%s' into input with label '%s\n", text, this.label);
-        driver.findElement(By.xpath(String.format(inputLocator, this.label))).sendKeys(text);
-    }
 
-    public void click(String accountName) {
-        driver.findElement(By.xpath(String.format(inputLocator, label))).click();
-        driver.findElement(By.xpath(String.format(optionLocator, accountName))).click();
+    public void write(String text) {
+        log.info("Writing text in the input field by the specified name when creating an account");
+        driver.findElement(By.xpath(String.format(inputLocator, this.label))).sendKeys(text);
     }
 }
 

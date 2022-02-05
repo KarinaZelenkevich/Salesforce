@@ -6,9 +6,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public abstract class BasePage {
-    public static final String BASE_URL = "https://qa-zelen8.my.salesforce.com";
+    public static final String BASE_URL = "https://qa-zelen8.lightning.force.com/";
     public static final By NEW_BUTTON = By.xpath("//a[@title='New']");
     public static final By SAVE_BUTTON = By.xpath("//button[@title='Save']");
+    public static final By MODAL_TITLE = By.xpath("//div[@class='modal-container slds-modal__container']//h2");
+
 
     WebDriver driver;
     WebDriverWait wait;
